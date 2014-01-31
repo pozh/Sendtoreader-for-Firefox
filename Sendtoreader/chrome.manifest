@@ -1,0 +1,7 @@
+content   sendtoreader                 chrome/content/
+skin      sendtoreader   classic       chrome/skin/
+locale    sendtoreader   en-US         chrome/locale/en-US/
+
+
+overlay   chrome://browser/content/browser.xul   chrome://sendtoreader/content/ff-overlay.xul
+style chrome://global/content/customizeToolbar.xul chrome://sendtoreader/skin/overlay.css

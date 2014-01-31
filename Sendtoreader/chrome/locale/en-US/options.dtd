@@ -1,0 +1,11 @@
+<!ENTITY prefwindow.title "SendToReader preferences">
+<!ENTITY pane1.title "SendToReader preferences">
+
+<!ENTITY alert.label "Disable alerts">
+<!ENTITY alert.accesskey "D">
+
+<!ENTITY username.label "Username">
+<!ENTITY username.accesskey "U">
+
+<!ENTITY password.label "Password">
+<!ENTITY password.accesskey "P">

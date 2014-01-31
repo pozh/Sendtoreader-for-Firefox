@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://sendtoreader/skin/overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://sendtoreader/locale/overlay.dtd">
+
+<overlay id="sendtoreader-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<script src="overlay.js"/>
+	<script src="ff-overlay.js"/>
+
+	<stringbundleset id="stringbundleset">
+		<stringbundle 
+			id="sendtoreader-strings" 
+			src="chrome://sendtoreader/locale/overlay.properties"
+		/>
+	</stringbundleset>
+
+	<popup id="contentAreaContextMenu">
+		<menuitem 
+			id="context-sendtoreader" 
+			label="&sendtoreaderContext.label;"
+			accesskey="&sendtoreaderContext.accesskey;" 
+			insertafter="context-stop"
+			oncommand="sendtoreader.onMenuItemCommand(event)"
+		/>
+	</popup>
+
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton 
+			id="sendtoreader-btn-send" 
+			class="toolbarbutton-1 chromeclass-toolbar-additional"
+			label="&sendtoreaderToolbarButton.label;" 
+			tooltiptext="&sendtoreaderToolbarButton.tooltip;"
+			oncommand="sendtoreader.onToolbarButtonCommand()"
+		/>
+	</toolbarpalette>
+
+</overlay>

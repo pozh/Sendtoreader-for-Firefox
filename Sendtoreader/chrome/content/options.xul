@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://sendtoreader/locale/options.dtd">
+<prefwindow id="sendtoreader-preferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;" >
+
+	<script type="application/x-javascript" src="overlay.js" />
+	<script type="application/x-javascript" >
+	<![CDATA[
+		function loadSenderPassword()
+		{
+			sendtoreader.startup();
+			password = document.getElementById( "passwordCtrl" );
+		
+			logins = sendtoreader.myLoginManager.findLogins({}, sendtoreader.hostname, sendtoreader.loginURL, sendtoreader.httprealm);
+			for (i=0; i< logins.length; i++){
+				if (logins[i].username == sendtoreader.username){
+					password.value = logins[i].password;
+				}
+			}
+		};
+		
+		function saveChanges(){
+			passwordObj = document.getElementById( "passwordCtrl" );
+			password = passwordObj.value;
+			sendtoreader.refreshInformation( password );
+		}
+	]]></script>
+
+	
+	<prefpane id="pane1" label="&pane1.title;" onpaneload="loadSenderPassword()">
+	<preferences>
+		<preference id="username" name="extensions.sendtoreader.username" type="string"/>
+		<preference id="password" name="extensions.sendtoreader.password" type="string"/> <!-- ASCII string (use unichar for unicode strings) -->
+		<preference id="alert" name="extensions.sendtoreader.alertDisabled" type="bool"/>
+    </preferences>
+	
+    <label accesskey="&username.accesskey;" control="usernameCtrl">&username.label;</label><textbox id="usernameCtrl" preference="username"/>
+    <label accesskey="&password.accesskey;" control="passwordCtrl">&password.label;</label><textbox id="passwordCtrl" type="password" onchange="saveChanges();" oninput="saveChanges();" />
+    <checkbox accesskey="&alert.accesskey;" id="disableAlert" preference="alert" label="&alert.label;" />
+	
+  </prefpane>
+</prefwindow>

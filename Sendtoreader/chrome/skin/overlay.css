@@ -1,0 +1,17 @@
+#sendtoreader-btn-send
+{
+  list-style-image: url("chrome://sendtoreader/skin/toolbar-button.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+#sendtoreader-btn-send:hover
+{
+  -moz-image-region: rect(24px 24px 48px  0px);
+}
+[iconsize="small"] #sendtoreader-btn-send
+{
+  -moz-image-region: rect( 0px 40px 16px 24px);
+}
+[iconsize="small"] #sendtoreader-btn-send:hover
+{
+  -moz-image-region: rect(24px 40px 40px 24px);
+}

@@ -1,0 +1,5 @@
+<!ENTITY sendtoreader.label "SENDtoREADER">
+<!ENTITY sendtoreaderContext.label "Send to Reader">
+<!ENTITY sendtoreaderContext.accesskey "S">
+<!ENTITY sendtoreaderToolbarButton.label "SENDtoREADER">
+<!ENTITY sendtoreaderToolbarButton.tooltip "Send this page to your Kindle">
